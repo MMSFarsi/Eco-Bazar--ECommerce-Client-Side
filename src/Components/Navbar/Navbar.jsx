@@ -1,7 +1,10 @@
 import { IoLocationOutline } from "react-icons/io5";
-import BannerBg from "../../../public/images/bannerBg.png"
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext)
   return (
     <div className="flex flex-col md:flex-row justify-between items-center md:px-28 px-4 py-2 bg-slate-950 text-white">
       <div className="text-center flex items-center md:text-left mb-2 md:mb-0">
@@ -26,9 +29,10 @@ const Navbar = () => {
         </div>
         
         <div>
-          <a href="#" aria-label="Sign in">Sign in</a>
+       {user ?<button onClick={logOut}>Logout</button>: 
+       <>   <Link to='/login' >Sign in</Link>
           <span> | </span>
-          <a href="#" aria-label="Sign up">Sign Up</a>
+          <Link to='/register' >Sign Up</Link></>}
         </div>
       </div>
     </div>

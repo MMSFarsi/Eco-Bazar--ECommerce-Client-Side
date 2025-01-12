@@ -10,6 +10,12 @@ import Pages from './pages/Pages';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import ProductDetails from './Components/ProductDetails';
+import Login from './pages/AuthPage/Login';
+import Register from './pages/AuthPage/Register';
+import AuthProvider from './provider/AuthProvider';
+import PrivateRoute from './PrivateRoute';
+import AddProduct from './pages/AddProduct';
+import ScrollToTop from './Components/Utils/ScrollToTop';
 
 
 
@@ -18,21 +24,32 @@ import ProductDetails from './Components/ProductDetails';
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<MainLayout></MainLayout>,
+    element: (
+      <>
+        <ScrollToTop />
+        <MainLayout />
+      </>
+    ),
+
     children:[
       {
         path:"/",
         element:<Home></Home>,
-        loader:()=>fetch("../featureProduct.json")
+        loader:()=>fetch("http://localhost:5000/products")
       },
       {
         path:"/product/:id",
-        element:<ProductDetails></ProductDetails>,
-        loader:()=>fetch("../featureProduct.json")
+        element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+        loader:()=>fetch("http://localhost:5000/products")
       },
       {
         path:"/shop",
-        element:<Shop></Shop>
+        element:<Shop></Shop>,
+        loader:()=>fetch("http://localhost:5000/products")
+      },
+      {
+        path:"/addProduct",
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path:"/pages",
@@ -49,7 +66,15 @@ const router = createBrowserRouter([
       {
         path:"/contact-us",
         element:<Contact></Contact>
-      }
+      },
+      {
+        path:"/login",
+        element: <Login></Login>
+      },
+      {
+        path:"/register",
+        element: <Register></Register>
+      },
     ]
 
   },
@@ -57,5 +82,5 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+ <AuthProvider> <RouterProvider router={router} /></AuthProvider>
 )

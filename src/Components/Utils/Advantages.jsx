@@ -2,10 +2,10 @@ import React from 'react'
 
 const Advantages = ({image,title,des}) => {
   return (
-    <div className='text-center shadow-lg my-4 py-7'>
-        <img className='mx-auto' src={image} alt="" />
-        <h1 className='font-bold text-xl'>{title}</h1>
-        <p>{des}</p>
+    <div className='text-center border px-8 my-1 lg:my-7 py-2 lg:py-6  '>
+        <img className='mx-auto h-12' src={image} alt="" />
+        <h1 className='font-bold text-sm'>{title}</h1>
+        <p className='text-xs'>{des}</p>
 
     </div>
   )

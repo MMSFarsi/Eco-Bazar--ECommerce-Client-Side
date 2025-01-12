@@ -1,19 +1,95 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Fade, Slide } from "react-awesome-reveal";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
 import bannerImage from "../../../public/images/banerImage.png";
+import anotherImage from "../../../public/images/anotherImage.png";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 justify-center items-center gap-4 p-4 md:p-8">
-      {/* Image Section */}
-      <div className="col-span-12 md:col-span-7 flex justify-center md:justify-start">
-        <img src={bannerImage} alt="Banner" className="w-full h-auto" />
-      </div>
+    <div className="relative w-full h-[400px] sm:h-[500px]">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
+        className="w-full h-full"
+      >
+        {/* First Slide */}
+        <SwiperSlide>
+          <div className="relative w-full h-full">
+            <img
+              src={bannerImage}
+              alt="Banner 1"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex justify-end items-center px-4 sm:px-8 lg:px-20">
+              <div className="text-black text-right space-y-3 sm:space-y-4">
+                <Slide direction="down" triggerOnce>
+                  <h2 className="text-green-400 text-sm sm:text-lg md:text-xl uppercase tracking-wide">
+                    Welcome to Shopery
+                  </h2>
+                </Slide>
+                <Slide direction="left" triggerOnce>
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight">
+                    Fresh and Healthy Organic Food
+                  </h1>
+                </Slide>
+                <Fade delay={300} triggerOnce>
+                  <p className="text-xs sm:text-base md:text-lg max-w-lg">
+                    Free Shipping on all your orders. We deliver, you enjoy.
+                  </p>
+                </Fade>
+                <Fade delay={500} triggerOnce>
+                  <button className="px-4 py-2 sm:px-6 sm:py-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300">
+                    Shop Now
+                  </button>
+                </Fade>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
 
-      {/* Text Section */}
-      <div className="col-span-12 md:col-span-4 text-center md:text-left space-y-4">
-        <h2 className="text-green-500 text-lg md:text-xl">WELCOME TO SHOPERY</h2>
-        <h1 className="text-3xl md:text-5xl font-bold">Fresh And Healthy Organic Food</h1>
-        <p className="text-sm md:text-base">Free Shipping on all your orders. We deliver, you enjoy.</p>
-      </div>
+        {/* Second Slide */}
+        <SwiperSlide>
+          <div className="relative w-full h-full">
+            <img
+              src={anotherImage}
+              alt="Banner 2"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex justify-start items-center px-4 sm:px-8 lg:px-20">
+              <div className="text-white text-left space-y-3 sm:space-y-4">
+                <Slide direction="down" triggerOnce>
+                  <h2 className="text-green-400 text-sm sm:text-lg md:text-xl uppercase tracking-wide">
+                    Discover Fresh Deals
+                  </h2>
+                </Slide>
+                <Slide direction="right" triggerOnce>
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight">
+                    Organic Food for Your Family
+                  </h1>
+                </Slide>
+                <Fade delay={300} triggerOnce>
+                  <p className="text-xs sm:text-base md:text-lg max-w-lg">
+                    Get the best discounts on fresh, organic groceries today.
+                  </p>
+                </Fade>
+                <Fade delay={500} triggerOnce>
+                  <button className="px-4 py-2 sm:px-6 sm:py-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300">
+                    Explore More
+                  </button>
+                </Fade>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };
