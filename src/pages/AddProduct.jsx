@@ -15,7 +15,7 @@ const AddProduct = () => {
 
 
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://eco-bazar-server.vercel.app/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(product),

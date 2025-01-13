@@ -35,17 +35,17 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>,
-        loader:()=>fetch("http://localhost:5000/products")
+        loader:()=>fetch("https://eco-bazar-server.vercel.app/products")
       },
       {
         path:"/product/:id",
         element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader:()=>fetch("http://localhost:5000/products")
+        loader:()=>fetch("https://eco-bazar-server.vercel.app/products")
       },
       {
         path:"/shop",
         element:<Shop></Shop>,
-        loader:()=>fetch("http://localhost:5000/products")
+        loader:()=>fetch("https://eco-bazar-server.vercel.app/products")
       },
       {
         path:"/addProduct",

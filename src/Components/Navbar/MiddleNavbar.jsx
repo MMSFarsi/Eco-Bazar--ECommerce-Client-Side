@@ -12,7 +12,7 @@ const MiddleNavbar = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-36 py-2 bg-white shadow-md space-y-2 md:space-y-0">
-      {/* Logo */}
+     
       <div className="flex items-center justify-center md:justify-start">
         <img src={logo} alt="Logo" className="h-8 mr-2" />
         <Link to="/">
@@ -33,12 +33,13 @@ const MiddleNavbar = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        {/* User Photo */}
+      
         {user && (
           <>
             <img
               src={user.photoURL}
               alt="User"
+              referrerPolicy="no-referrer"
               className="h-8 w-8 rounded-full border border-gray-300 cursor-pointer"
               data-tooltip-id="user-tooltip"
             />
