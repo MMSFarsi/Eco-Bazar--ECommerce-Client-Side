@@ -7,10 +7,10 @@ const Navbar = () => {
   const {user,logOut}=useContext(AuthContext)
   return (
     <div className="flex flex-col md:flex-row justify-between items-center md:px-28 px-4 py-2 bg-slate-950 text-white">
-      <div className="text-center flex items-center md:text-left mb-2 md:mb-0">
-        <span><IoLocationOutline /></span>
-        <p className="ml-2">  Store Location: Lincoln-344, Illinois, Chicago, USA</p>
-      </div>
+    <div className="text-center flex items-center md:text-left mb-2 md:mb-0 hidden md:flex">
+  <span><IoLocationOutline /></span>
+  <p className="ml-2">Store Location: Lincoln-344, Illinois, Chicago, USA</p>
+</div>
       <div className="flex gap-4 md:gap-8 items-center">
         <div>
           <select aria-label="Language" className="bg-slate-950 text-white">

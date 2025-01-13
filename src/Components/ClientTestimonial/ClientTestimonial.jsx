@@ -1,4 +1,5 @@
 import { Fade, Slide } from "react-awesome-reveal";
+import testiImg from "/images/testi.png"
 
 const ClientTestimonial = () => {
   const testimonials = [
@@ -16,7 +17,7 @@ const ClientTestimonial = () => {
       feedback:
         "I’ve saved so much money using their discounts. Highly recommend this platform to anyone who loves shopping smart!",
       image: "https://i.ibb.co.com/0D77FX8/Cristiano-Ronaldo-Portugal-2024-4.jpg",
-      designation: "Frequent Buyer",
+      designation: "Customer",
     },
     {
       id: 3,
@@ -24,41 +25,45 @@ const ClientTestimonial = () => {
       feedback:
         "Exceptional customer service and fantastic deals. It’s my go-to app for organic groceries!",
       image: "https://i.ibb.co.com/txP417Z/603-neymar.gif",
-      designation: "Loyal Customer",
+      designation: "Customer",
     },
   ];
 
   return (
-    <div className="bg-gray-100 py-12 px-6 md:px-12">
+    <div className="bg-gray-100 py-20 px-6 md:px-12">
       <div className="text-center mb-8">
         <Slide direction="down" triggerOnce>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-          Client Testimonial
-          </h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Client Testimonials</h2>
+        <div className="flex justify-center mb-4">
+        <div className="border-t-4 border-green-500 w-20"></div>
+      </div>
         </Slide>
-        <Fade delay={300} triggerOnce>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Here’s what our happy clients have to say about our services.
-          </p>
-        </Fade>
+    
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.map((testimonial) => (
           <Fade key={testimonial.id} triggerOnce>
-            <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center space-y-4">
-              <img
+            <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col   space-y-4">
+            
+        <img className="w-fit" src={testiImg} alt="" />
+              <p  className="text-sm text-gray-600 h-20 ">"{testimonial.feedback}"</p>
+              
+             <div className="flex gap-5">
+             <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                className="w-24 h-24 rounded-full object-cover border-4 border-green-500"
+                className="w-14 h-14 rounded-full object-cover border-1 border-green-500"
               />
-              <h3 className="text-xl font-semibold text-gray-800">
+                 <div>
+                 <h3 className="text-lg font-semibold text-gray-800">
                 {testimonial.name}
               </h3>
-              <p className="text-sm text-gray-600 italic">"{testimonial.feedback}"</p>
-              <span className="text-green-500 text-sm font-medium">
+              <span className=" text-sm text-gray-600 ">
                 {testimonial.designation}
               </span>
+                 </div>
+             </div>
             </div>
           </Fade>
         ))}

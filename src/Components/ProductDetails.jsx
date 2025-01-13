@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Get the product ID from the URL
-  const data = useLoaderData(); // Data loaded via React Router
+  const { id } = useParams(); 
+  const data = useLoaderData(); 
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    // Find the product by matching the _id field
+  
     const selectedProduct = data.find((product) => product._id === id);
     setProduct(selectedProduct || {});
-  }, [id, data]); // Depend on 'id' and 'data'
+  }, [id, data]); 
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl min-h-screen mx-auto mt-20 p-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Product Image */}
+    
         <div className="w-full">
           {product.img ? (
             <img
@@ -28,7 +28,6 @@ const ProductDetails = () => {
           )}
         </div>
 
-        {/* Product Info */}
         <div className="space-y-4">
           <h1 className="text-3xl font-bold text-gray-800">{product.product_name || "Product Name"}</h1>
           <p className="text-gray-600">{product.description || "No description available"}</p>

@@ -16,6 +16,7 @@ import AuthProvider from './provider/AuthProvider';
 import PrivateRoute from './PrivateRoute';
 import AddProduct from './pages/AddProduct';
 import ScrollToTop from './Components/Utils/ScrollToTop';
+import Error from './Components/Error';
 
 
 
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
         <MainLayout />
       </>
     ),
+    errorElement:<Error></Error>,
 
     children:[
       {
