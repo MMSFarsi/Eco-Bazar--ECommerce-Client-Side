@@ -5,7 +5,7 @@ const Contact = () => {
     return (
        <div>
          <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-lg shadow-md">
-            {/* Contact Info */}
+          
             <div className="flex flex-col items-center bg-gray-50 rounded-lg p-6 space-y-6">
                 <div className="text-center">
                     <div className="text-green-500 text-3xl mb-2">📍</div>
@@ -23,7 +23,6 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Contact Form */}
             <div className="flex flex-col justify-center">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-2">Just Say Hello!</h2>
                 <p className="text-gray-600 mb-6">Do you fancy saying hi to me or you want to get started with your project and need my help? Feel free to contact me.</p>

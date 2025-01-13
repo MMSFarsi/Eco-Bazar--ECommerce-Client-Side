@@ -45,7 +45,7 @@ const AddProduct = () => {
     <div className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-md">
       <h2 className="text-xl font-bold mb-4 text-center">Add New Product</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Product Name */}
+     
         <div>
           <label htmlFor="product_name" className="block text-sm font-medium text-gray-700">
             Product Name
@@ -61,7 +61,7 @@ const AddProduct = () => {
           />
         </div>
 
-        {/* Price */}
+     
         <div>
           <label htmlFor="price" className="block text-sm font-medium text-gray-700">
             Price ($)
@@ -78,7 +78,7 @@ const AddProduct = () => {
           />
         </div>
 
-        {/* Image URL */}
+       
         <div>
           <label htmlFor="img" className="block text-sm font-medium text-gray-700">
             Image URL
@@ -110,7 +110,7 @@ const AddProduct = () => {
           ></textarea>
         </div>
 
-        {/* Rating */}
+        
         <div>
           <label htmlFor="rating" className="block text-sm font-medium text-gray-700">
             Rating
@@ -128,7 +128,7 @@ const AddProduct = () => {
           />
         </div>
 
-        {/* Submit Button */}
+  
         <div>
           <button
             type="submit"

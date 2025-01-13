@@ -52,7 +52,6 @@ const MiddleNavbar = () => {
           </>
         )}
 
-        {/* Wishlist Icon */}
         <button
           aria-label="Wishlist"
           className="text-2xl border-r-2 pr-3 hover:text-green-500"
@@ -60,7 +59,7 @@ const MiddleNavbar = () => {
           <IoIosHeartEmpty />
         </button>
 
-        {/* Shopping Cart Icon */}
+     
         <div className="flex items-center">
           <span className="text-black text-2xl mr-2">
             <PiHandbagSimpleLight />

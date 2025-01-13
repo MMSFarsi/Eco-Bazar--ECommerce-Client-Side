@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaRegFrownOpen } from "react-icons/fa"; // Icon for a sad face or error indication
+import { FaRegFrownOpen } from "react-icons/fa"; 
 
 const Error = () => {
   return (
