@@ -12,7 +12,7 @@ const MiddleNavbar = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-36 py-2 bg-white shadow-md space-y-2 md:space-y-0">
-     
+
       <div className="flex items-center justify-center md:justify-start">
         <img src={logo} alt="Logo" className="h-8 mr-2" />
         <Link to="/">
@@ -20,7 +20,7 @@ const MiddleNavbar = () => {
         </Link>
       </div>
 
-     
+
       <div className="flex items-center w-full md:w-1/2">
         <input
           type="text"
@@ -33,7 +33,7 @@ const MiddleNavbar = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-      
+
         {user && (
           <>
             <img
@@ -59,11 +59,12 @@ const MiddleNavbar = () => {
           <IoIosHeartEmpty />
         </button>
 
-     
+
         <div className="flex items-center">
-          <span className="text-black text-2xl mr-2">
-            <PiHandbagSimpleLight />
-          </span>
+          <Link className="mx-auto" to='/cart'>
+            <span className="text-black text-2xl mr-2">
+              <PiHandbagSimpleLight />
+            </span></Link>
           <div className="grid">
             <p className="">Shopping cart</p>
             <p className="ml-1">$00.00</p>

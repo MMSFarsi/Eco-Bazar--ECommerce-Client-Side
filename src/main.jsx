@@ -17,9 +17,11 @@ import PrivateRoute from './PrivateRoute';
 import AddProduct from './pages/AddProduct';
 import ScrollToTop from './Components/Utils/ScrollToTop';
 import Error from './Components/Error';
+import Cart from './pages/Cart';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
-
+const queryClient = new QueryClient()
 
 
 const router = createBrowserRouter([
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/product/:id",
-        element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+        element:<ProductDetails></ProductDetails>,
         loader:()=>fetch("http://localhost:5000/products")
       },
       {
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
       {
         path:"/addProduct",
         element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+      },
+      {
+        path:"/cart",
+        element:<PrivateRoute><Cart></Cart></PrivateRoute>
       },
       {
         path:"/pages",
@@ -84,5 +90,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
+
+
+ <QueryClientProvider client={queryClient}>
  <AuthProvider> <RouterProvider router={router} /></AuthProvider>
+</QueryClientProvider>
 )
