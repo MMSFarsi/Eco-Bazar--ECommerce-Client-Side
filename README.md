@@ -71,4 +71,4 @@ Run `npm run dev` to run the project locally.
 ## Relevant Links
 Live Site: https://eco-bazar-28b49.web.app/
 Server Github Link: https://github.com/MMSFarsi/Eco-Bazar-Server-Side
-Server Site: https://eco-bazar-server.vercel.app/
+Server Site: http://localhost:5000/
