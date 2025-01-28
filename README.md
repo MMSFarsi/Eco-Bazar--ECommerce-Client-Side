@@ -22,7 +22,7 @@ Eco Bazar is an e-commerce platform where users can shop for fresh and healthy o
 
 
 ## Dependencies
-   "axios": "^1.7.9",
+    "axios": "^1.7.9",
     "firebase": "^11.1.0",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.14",
